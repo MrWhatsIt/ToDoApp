@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="ToDoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoApp</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="controller" href="homeController.js">
+  </head>
+  <body ng-controller="HomeController as vm">
+    <h1 style="text-align:center;">ToDoApp</h1>
+
+    <div class="container">
+      <form ng-submit="vm.todos()">
+        <input class="form-control" type="text" placeholder="What's on your list?" ng-model="vm.newTodo">
+      </form>
+      <button type="button" ng-click="vm.clearList()" class="btn btn-warning center-block">ClearList</button> <br><br>
+
+    </div>
+    <div class="container">
+      <ul>
+        <li ng-repeat="t in vm.todos">
+          <input type="checkbox" ng-model="t.completed">
+          <span ng-class="{'completed':vm.todos.completed}">{{t}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="homeController.js" charset="utf-8"></script>
+  </body>
+</html>

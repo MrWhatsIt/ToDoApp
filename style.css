@@ -1,0 +1,17 @@
+body{
+  padding: 10%;
+  background-color: orange;
+}
+.container {
+  width:100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+input {
+  margin-bottom: 5px;
+}
+button{
+  width: 200px;
+}
